@@ -1,4 +1,4 @@
-package FloatLight;
+package com.example.demo.floatLight;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

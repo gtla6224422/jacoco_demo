@@ -1,10 +1,20 @@
-package com.example.demo.model;
+package com.example.demo.floatLight.model;
 
-public class PaymentRequest {
+public class PaymentResponse {
     private String wid;
     private String order_id;
 
+    // 无参构造函数
+    public PaymentResponse() {}
+
+
+    public PaymentResponse(String wid, String order_id) {
+        this.wid = wid;
+        this.order_id = order_id;
+    }
+
     // Getter 和 Setter
+
     public String getWid() {
         return wid;
     }
