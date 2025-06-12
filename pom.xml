@@ -49,9 +49,15 @@
     	<dependency>
         	<groupId>org.junit.jupiter</groupId>
         	<artifactId>junit-jupiter-api</artifactId>
-        	<version>5.10.0</version> <!-- 根据需要调整版本 -->
+        	<!--version>5.10.0</version--> <!-- 根据需要调整版本 -->
         	<scope>test</scope>
     	</dependency>
+
+		<dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <scope>test</scope>
+        </dependency>
 	</dependencies>
 
 	<build>
@@ -64,7 +70,7 @@
 			<plugin>
             	<groupId>org.jacoco</groupId>
             	<artifactId>jacoco-maven-plugin</artifactId>
-            	<version>0.8.3</version> <!-- 版本号根据需要调整 -->
+            	<version>0.8.12</version> <!-- 版本号根据需要调整 -->
             	<executions>
                 	<execution>
                     	<goals>
@@ -84,7 +90,21 @@
 			<plugin>
             	<groupId>org.apache.maven.plugins</groupId>
             	<artifactId>maven-surefire-plugin</artifactId>
-            	<version>2.1.1</version>
+            	<version>3.1.2</version>
+				<configuration>
+					<includes>
+            			<include>**/*Test.java</include> <!-- 明确包含测试类 -->
+        			</includes>
+					<!-- 添加详细测试日志 -->
+					<redirectTestOutputToFile>true</redirectTestOutputToFile>
+        			<printSummary>true</printSummary>
+        			<argLine>-Dfile.encoding=UTF-8</argLine>
+
+					<argLine>
+            			-javaagent:C:\\Users\\Login\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.11\\org.jacoco.agent-0.8.11-runtime.jar=destfile=target/jacoco.exec
+            			-Dfile.encoding=UTF-8
+        			</argLine>
+    			</configuration>
         	</plugin>
 		</plugins>
 	</build>
