@@ -81,7 +81,7 @@
 				<configuration>
                 	<!-- 关键：添加 JaCoCo 代理参数 -->
                 	<jvmArguments>
-                    	-javaagent:${settings.localRepository}/org/jacoco/org.jacoco.agent/0.8.11/org.jacoco.agent-0.8.11-runtime.jar=destfile=${project.build.directory}/jacoco.exec,append=true
+                    	-javaagent:${settings.localRepository}/org/jacoco/org.jacoco.agent/0.8.12/org.jacoco.agent-0.8.12-runtime.jar=destfile=${project.build.directory}/jacoco.exec,append=true
                 	</jvmArguments>
             	</configuration>
 			</plugin>
@@ -120,7 +120,7 @@
         			<argLine>-Dfile.encoding=UTF-8</argLine>
 
 					<argLine>
-            			-javaagent:C:\\Users\\Login\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.11\\org.jacoco.agent-0.8.11-runtime.jar=destfile=target/jacoco.exec
+            			-javaagent:C:\\Users\\Login\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.12\\org.jacoco.agent-0.8.12-runtime.jar=destfile=target/jacoco.exec
             			-Dfile.encoding=UTF-8
         			</argLine>
     			</configuration>
